@@ -7,8 +7,8 @@ gem "rails", "5.1.2"
 
 # assets
 gem "autoprefixer-rails"
-gem "coffee-rails"
 gem "bootstrap-sass"
+gem "coffee-rails"
 gem "mini_racer"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
