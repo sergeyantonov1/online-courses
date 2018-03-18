@@ -1,4 +1,7 @@
 @import "forms";
 @import "navigation";
 @import "notifications";
-@import "container";
+
+.no-bullet {
+  list-style-type: none;
+}

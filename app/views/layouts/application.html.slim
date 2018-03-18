@@ -20,10 +20,8 @@ html class="no-js" lang="en"
     = render "navigation"
     = render "messages"
 
-    main.container
+    .container
       = yield
-
-    = render "footer"
 
     javascript:
       App.currentUserData = #{{current_user.to_json}};

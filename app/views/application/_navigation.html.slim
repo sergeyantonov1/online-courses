@@ -1,7 +1,13 @@
-.title-bar data-hide-for="medium" data-responsive-toggle="navigation_menu"
-  button.menu-icon data-toggle="" type="button"
-  title-bar-title Menu
-
-nav.top-bar#navigation_menu
-  = render "navigation_main"
-  = render "navigation_user"
+nav.navbar.navbar-default role="navigation"
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#"  Base
+    #navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li
+      = render "navigation_user"
