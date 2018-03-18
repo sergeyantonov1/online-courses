@@ -45,4 +45,4 @@ bin/server
   
 ## Staging
 
-* http://staging-online-courses.herokuapp.com/
+* https://online-courses-staging.herokuapp.com/
