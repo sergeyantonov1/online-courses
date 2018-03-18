@@ -4,10 +4,10 @@
 
 ## Dependencies
 
-* PostgreSQL 9.3
-* Ruby 2.2.3
+* PostgreSQL 9.х
+* Ruby 2.4.2
 * PhantomJS
-* Rails 4
+* Rails 5.1.2
 
 Setup required dependencies from `Brewfile`:
 ```bash
