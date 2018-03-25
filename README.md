@@ -42,6 +42,10 @@ bin/server
 ## Test users
 
   - User: "user@example.com / password"
+  - Manager: "manager@example.com / password"
+  - Super manager: "super_manager@example.com / password"
+  
+  Sign in manager link: https://online-courses-staging.herokuapp.com/managers/sign_in
   
 ## Staging
 
