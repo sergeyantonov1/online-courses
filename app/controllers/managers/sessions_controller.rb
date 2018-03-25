@@ -1,5 +1,5 @@
 module Managers
-  class RegistrationsController < Devise::RegistrationsController
+  class SessionsController < Devise::SessionsController
     before_action :require_no_authentication, only: :new
 
     private
