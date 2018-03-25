@@ -1,0 +1,16 @@
+table.table.table-hover
+  thead
+    tr
+      th Email
+      th ФИО
+  tbody
+    - managers.each do |manager|
+      tr
+        td = manager.email
+        td = manager.full_name
+
+= paginate managers, window: 2
+
+br
+= link_to "Пригласить менеджера", new_manager_invitation_path,
+  class: "btn btn-default" if current_manager.super_manager
