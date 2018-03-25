@@ -5,4 +5,10 @@ FactoryGirl.define do
     email
     password "password"
   end
+
+  trait :with_super do
+    after(:create) do |manager|
+      manager.update(super_manager: true)
+    end
+  end
 end

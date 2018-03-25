@@ -1,7 +1,7 @@
 class BaseQuery
   attr_reader :relation, :params
 
-  DEFAULT_PER_PAGE = 10.freeze
+  DEFAULT_PER_PAGE = 10
 
   def initialize(relation, params = {})
     @relation = relation
