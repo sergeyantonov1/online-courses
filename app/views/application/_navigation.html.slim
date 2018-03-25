@@ -9,7 +9,6 @@ nav.navbar.navbar-default role="navigation"
       a.navbar-brand href="#"  Base
     #navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li if current_user
-        = active_link_to "Home", cabinet_root_path, active: :exclusive, wrap_tag: :li if current_manager
+        = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li
       = render "navigation_user"
       = render "navigation_manager"

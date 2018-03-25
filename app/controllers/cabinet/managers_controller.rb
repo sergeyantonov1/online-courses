@@ -7,7 +7,8 @@ module Cabinet
     def fetch_managers
       Managers::AllExceptCurrentManager.new(
         Manager.all,
-        current_manager: current_manager
+        current_manager: current_manager,
+        page: params[:page]
       ).all
     end
   end

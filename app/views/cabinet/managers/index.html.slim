@@ -8,4 +8,8 @@ table.table.table-hover
       tr
         td = manager.email
         td = manager.full_name
-= link_to "Пригласить менеджера", new_manager_invitation_path
+
+= paginate managers, window: 2
+
+= link_to "Пригласить менеджера", new_manager_invitation_path,
+  class: "btn btn-default" if current_manager.super_manager

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   as :manager do
     get "managers/edit", to: "managers/registrations#edit", as: "edit_manager_registration"
-    put "managers", to: "users/registrations#update"
-    delete "managers", to: "users/registrations#destroy"
+    put "managers", to: "managers/registrations#update"
+    delete "managers", to: "managers/registrations#destroy"
   end
 
   namespace :cabinet do
