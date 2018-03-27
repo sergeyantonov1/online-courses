@@ -16,7 +16,13 @@
         | account
 
       .form-group
-        = f.input :full_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :first_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :second_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :middle_name, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :birthday, required: true, as: :date, start_year: Date.today.year - 90,
+                             end_year: Date.today.year - 6,
+                             order: [:month, :year, :day], input_html: { class: "form-group form-control" }
+        = f.input :phone_number, as: :tel, required: true, input_html: { class: "form-group form-control" }
         = f.input :email, required: true, input_html: { class: "form-group form-control" }
         = f.input :password, required: true, input_html: { class: "form-group form-control" }
         = f.input :password_confirmation, required: true, input_html: { class: "form-group form-control" }
