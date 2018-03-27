@@ -4,7 +4,7 @@ en:
       user:
     attributes:
       user:
-        full_name:
+        first_name:
   simple_form:
     labels:
       user:
