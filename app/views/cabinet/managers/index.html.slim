@@ -7,7 +7,7 @@ table.table.table-hover
     - managers.each do |manager|
       tr
         td = manager.email
-        td = manager.full_name
+        td = manager.first_name
 
 = paginate managers, window: 2
 
