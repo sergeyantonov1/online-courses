@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :user do
     email
     first_name { Faker::Name.name }
+    second_name { Faker::Name.last_name }
     password "password"
     password_confirmation { password }
     confirmed_at 1.hour.ago
