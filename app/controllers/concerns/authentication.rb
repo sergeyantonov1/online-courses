@@ -20,6 +20,8 @@ module Authentication
       User::ParameterSanitizer.new(User, :user, params)
     elsif resource_class == Manager
       Manager::ParameterSanitizer.new(Manager, :manager, params)
+    elsif resource_class == Teacher
+      Teacher::ParameterSanitizer.new(Teacher, :teacher, params)
     else
       super
     end
