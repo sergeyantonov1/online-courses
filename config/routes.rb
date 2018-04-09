@@ -7,6 +7,12 @@ Rails.application.routes.draw do
       invitations: "managers/invitations"
     }, skip: %i[registrations]
 
+  devise_for :teachers,
+    controllers: {
+      invitations: "teachers/invitations",
+      sessions: "teachers/sessions"
+    }
+
   as :manager do
     get "managers/edit", to: "managers/registrations#edit", as: "edit_manager_registration"
     put "managers", to: "managers/registrations#update"
