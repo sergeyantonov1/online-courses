@@ -1,6 +1,5 @@
 module Teachers
   class InvitationsController < Devise::InvitationsController
-
     def new
       current_manager ? super : redirect_to(root_path)
     end
