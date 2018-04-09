@@ -1,0 +1,27 @@
+h2 = title("Sign up")
+
+.row
+  .col-md-5
+    = simple_form_for resource,
+        as: resource_name,
+        url: registration_path(resource_name) do |f|
+
+      legend
+        | Create your
+        '
+        strong Rails Base example site
+        '
+        | account
+
+      .form-group
+        = f.input :first_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :second_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
+        = f.input :email, required: true, input_html: { class: "form-group form-control" }
+        = f.input :password, required: true, input_html: { class: "form-group form-control" }
+        = f.input :password_confirmation, required: true, input_html: { class: "form-group form-control" }
+
+      .form-actions
+        = f.button :submit, "Sign up", class: "btn btn-default"
+
+  .col-md-5.col-md-offset-2
+    = render "teachers/shared/links"

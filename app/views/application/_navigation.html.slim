@@ -11,4 +11,5 @@ nav.navbar.navbar-default role="navigation"
       ul.nav.navbar-nav
         = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li
       = render "navigation_user"
-      = render "navigation_manager"
+      = render "navigation_manager" if manager_signed_in?
+      = render "navigation_teacher" if teacher_signed_in?
