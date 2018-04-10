@@ -8,6 +8,7 @@ module Managers
       redirect_to cabinet_root_path if manager_signed_in?
 
       sign_out(current_user) if user_signed_in?
+      sign_out(current_teacher) if teacher_signed_in?
     end
   end
 end
