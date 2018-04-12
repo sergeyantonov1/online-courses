@@ -12,5 +12,9 @@ table.table.table-hover
 = paginate managers, window: 2
 
 br
+= link_to "Пригласить преподавателя", new_teacher_invitation_path,
+  class: "btn btn-default" if current_manager
+
+br
 = link_to "Пригласить менеджера", new_manager_invitation_path,
   class: "btn btn-default" if current_manager.super_manager
