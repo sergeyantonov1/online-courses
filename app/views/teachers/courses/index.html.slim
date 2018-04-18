@@ -1,0 +1,11 @@
+.row
+  .col-md-8.col-md-offset-2
+    .pull-left
+      h3 My Courses
+    .pull-right
+      = link_to "Create new course", new_teachers_course_path, class: "btn btn-default"
+    .clearfix
+    hr
+
+    = render courses
+
