@@ -3,4 +3,6 @@ class Teacher < ApplicationRecord
     :rememberable, :trackable, :registerable, :validatable
 
   validates :first_name, :second_name, presence: true
+
+  has_many :courses
 end

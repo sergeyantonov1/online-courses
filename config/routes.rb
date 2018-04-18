@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     delete "teachers", to: "teachers/registrations#destroy"
   end
 
+  namespace :teachers do
+    resources :courses
+  end
+
   namespace :cabinet do
     resources :managers, only: %i[index]
 
