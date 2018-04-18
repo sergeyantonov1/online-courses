@@ -27,6 +27,7 @@ gem "simple_form"
 gem "slim"
 
 # all other gems
+gem "carrierwave", "~> 1.0"
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
