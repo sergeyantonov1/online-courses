@@ -30,9 +30,11 @@ Rails.application.routes.draw do
   end
 
   namespace :cabinet do
-    resources :managers, only: %i[index]
+    namespace :admin do
+      resources :managers, only: %i[index]
 
-    root to: "managers#index"
+      root to: "managers#index"
+    end
   end
   root to: "pages#home"
 end
