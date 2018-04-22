@@ -5,7 +5,7 @@ module Managers
     private
 
     def require_no_authentication
-      redirect_to cabinet_root_path if manager_signed_in?
+      redirect_to cabinet_admin_root_path if manager_signed_in?
 
       sign_out(current_user) if user_signed_in?
       sign_out(current_teacher) if teacher_signed_in?

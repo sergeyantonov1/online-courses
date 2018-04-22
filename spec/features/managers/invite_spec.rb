@@ -36,7 +36,7 @@ feature "Invite manager" do
     scenario "don't send invite" do
       visit new_manager_invitation_path
 
-      expect(current_path).to eql(root_path)
+      expect(current_path).to eql(cabinet_admin_root_path)
     end
   end
 end

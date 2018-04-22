@@ -8,11 +8,11 @@ module Managers
     private
 
     def apply_managers
-      @relation.where.not(id: params[:current_manager])
+      @relation = @relation.where.not(id: params[:manager_id])
     end
 
     def paginate
-      @relation.page(params[:page]).per(DEFAULT_PER_PAGE)
+      @relation = @relation.page(params[:page]).per(DEFAULT_PER_PAGE)
     end
   end
 end
