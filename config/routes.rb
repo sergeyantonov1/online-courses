@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     end
 
     namespace :client do
-      resources :subscriptions
+      resources :subscriptions, only: %i[index create]
     end
   end
 
