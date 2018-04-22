@@ -1,0 +1,2 @@
+class SubscriptionDecorator < ApplicationDecorator
+end

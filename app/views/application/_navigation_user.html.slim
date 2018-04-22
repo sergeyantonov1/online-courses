@@ -5,6 +5,7 @@ ul.nav.navbar-nav.navbar-right
         = current_user.first_name
         b.caret
       ul.dropdown-menu
+        li = link_to "My courses", cabinet_client_subscriptions_path
         li = link_to "Edit", edit_user_registration_path
         li.divider
         li = link_to "Sign out", destroy_user_session_path
