@@ -2,5 +2,7 @@ h1 All conversations
 
 - conversations.each do |conversation|
   = link_to conversation.subject, users_conversation_path(conversation)
+  br
 
+br
 = link_to "New conversation", new_users_conversation_path
