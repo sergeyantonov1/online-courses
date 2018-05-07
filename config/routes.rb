@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   namespace :teachers do
     resources :courses
+    resources :conversations do
+      resources :messages
+    end
   end
 
   namespace :cabinet do
@@ -42,6 +45,18 @@ Rails.application.routes.draw do
   end
 
   resources :courses, only: %i[index]
+
+  namespace :users do
+    resources :conversations do
+      resources :messages
+    end
+  end
+
+  namespace :managers do
+    resources :conversations do
+      resources :messages
+    end
+  end
 
   root to: "courses#index"
 end
