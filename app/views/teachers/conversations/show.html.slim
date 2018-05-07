@@ -1,0 +1,12 @@
+h1
+  = conversation.subject
+
+- conversation.receipts_for(Teacher.find(current_teacher.id)).each do |receipt|
+  = receipt.message.sender.first_name
+  = receipt.message.body
+  br
+
+= form_tag teachers_conversation_messages_path(conversation), method: :post do
+  = text_area_tag :body
+
+  = submit_tag
