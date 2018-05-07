@@ -1,8 +1,7 @@
 class Manager < ApplicationRecord
-
   acts_as_messageable
 
-  def mailboxer_email(messageable)
+  def mailboxer_email(*)
     email
   end
 

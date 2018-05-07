@@ -10,12 +10,12 @@ module Managers
 
     def create
       recipient = case params[:profile_role]
-      when "user"
-        user_recipient
-      when "teacher"
-        teacher_recipient
-      when "manager"
-        manager_recipient
+                  when "user"
+                    user_recipient
+                  when "teacher"
+                    teacher_recipient
+                  when "manager"
+                    manager_recipient
       end
       receipt = current_manager.send_message(recipient, params[:body], params[:subject])
       redirect_to managers_conversation_path(receipt.conversation)

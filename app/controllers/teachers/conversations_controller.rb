@@ -8,15 +8,14 @@ module Teachers
     expose :manager_recipient, -> { Manager.find(params[:profile_id]) }
     expose :teacher, -> { current_teacher }
 
-
     def create
       recipient = case params[:profile_role]
-      when "user"
-        user_recipient
-      when "teacher"
-        teacher_recipient
-      when "manager"
-        manager_recipient
+                  when "user"
+                    user_recipient
+                  when "teacher"
+                    teacher_recipient
+                  when "manager"
+                    manager_recipient
       end
       receipt = current_teacher.send_message(recipient, params[:body], params[:subject])
       redirect_to teachers_conversation_path(receipt.conversation)
