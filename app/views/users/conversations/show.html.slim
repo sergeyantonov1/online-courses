@@ -1,12 +1,14 @@
 h1
   = conversation.subject
 
-- conversation.receipts_for(User.find(current_user.id)).each do |receipt|
+- conversation.receipts_for(user).each do |receipt|
   = receipt.message.sender.first_name
+  = receipt.message.sender.second_name
+  br
   = receipt.message.body
   br
 
 = form_tag users_conversation_messages_path(conversation), method: :post do
   = text_area_tag :body
 
-  = submit_tag
+  = submit_tag "Reply"

@@ -6,7 +6,7 @@ module Managers
     expose :user_recipient, -> { User.find(params[:profile_id]) }
     expose :teacher_recipient, -> { Teacher.find(params[:profile_id]) }
     expose :manager_recipient, -> { Manager.find(params[:profile_id]) }
-
+    expose :manager, -> { current_manager }
 
     def create
       recipient = case params[:profile_role]
