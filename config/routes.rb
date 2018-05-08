@@ -35,6 +35,13 @@ Rails.application.routes.draw do
 
       root to: "managers#index"
     end
+
+    namespace :client do
+      resources :subscriptions, only: %i[index create]
+    end
   end
-  root to: "pages#home"
+
+  resources :courses, only: %i[index]
+
+  root to: "courses#index"
 end

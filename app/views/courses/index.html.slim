@@ -1,0 +1,17 @@
+- courses.each do |course|
+  .course-title
+    = course.title
+  .course-description
+    = course.description
+  .course-teacher
+    = course.teacher_full_name
+  .course-subscribe
+    - if current_user && course.users.include?(current_user.undecorate)
+      = link_to "Перейти к курсу"
+    - else
+      = simple_form_for Subscription.new, url: cabinet_client_subscriptions_path do |f|
+        = f.input :user_id, label: false, readonly: true, input_html: { value: current_user.id, hidden: true }
+        = f.input :course_id, label: false, readonly: true, input_html: { value: course.id, hidden: true }
+
+        = f.submit "Подписаться на курс"
+  hr

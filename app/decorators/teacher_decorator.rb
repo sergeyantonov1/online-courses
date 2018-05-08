@@ -4,8 +4,4 @@ class TeacherDecorator < ApplicationDecorator
   def full_name
     "#{first_name} #{second_name}"
   end
-
-  def status
-    "check"
-  end
 end
