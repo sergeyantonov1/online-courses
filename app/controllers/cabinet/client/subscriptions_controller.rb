@@ -8,16 +8,15 @@ module Cabinet
       end
 
       def create
+        subscription.user_id = current_user.id
+        subscription.course_id = params[:course_id]
+
         subscription.save
 
         respond_with subscription, location: cabinet_client_subscriptions_path
       end
 
       private
-
-      def subscription_params
-        params.require(:subscription).permit(:user_id, :course_id)
-      end
 
       def fetch_courses
         current_user.courses
