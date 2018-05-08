@@ -5,8 +5,8 @@ feature "Sign Out" do
 
   scenario "Teacher signs out" do
     visit "/"
-    click_link "Sign out"
+    click_link "Выйти"
 
-    expect(page).to have_content("Sign in")
+    expect(page).to have_content("Войти")
   end
 end

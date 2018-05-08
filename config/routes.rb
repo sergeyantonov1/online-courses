@@ -44,6 +44,11 @@ Rails.application.routes.draw do
 
     namespace :client do
       resources :subscriptions, only: %i[index create]
+
+      get "dashboard", to: "pages#dashboard"
+      get "profile", to: "pages#profile"
+
+      root to: "pages#dashboard"
     end
   end
 
