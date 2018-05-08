@@ -32,6 +32,12 @@ Rails.application.routes.draw do
   namespace :cabinet do
     namespace :admin do
       resources :managers, only: %i[index]
+      resources :subscriptions, only: %i[index] do
+        member do
+          patch :approve
+          patch :cancel
+        end
+      end
 
       root to: "managers#index"
     end

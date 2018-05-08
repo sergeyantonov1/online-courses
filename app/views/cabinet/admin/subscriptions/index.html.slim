@@ -1,0 +1,27 @@
+- subscriptions.each do |subscription|
+  .subscription
+    .course-title
+      span Название курса:
+      '
+      = subscription.course.title
+    .user-full_name
+      span Полное имя:
+      '
+      = subscription.user.full_name
+    .user-email
+      span Email:
+      '
+      = subscription.user.email
+    .user-phone_number
+      span Номер телефона:
+      '
+      = subscription.user.phone_number
+    .status
+      span Статус заказа:
+      '
+      = subscription.status
+    .links
+      = link_to "Одобрить", approve_cabinet_admin_subscription_path(subscription), method: :patch
+      br
+      = link_to "Отклонить", cancel_cabinet_admin_subscription_path(subscription), method: :patch
+    hr
