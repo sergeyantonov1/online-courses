@@ -6,13 +6,15 @@
   .course-teacher
     = course.teacher_full_name
   .course-subscribe
-    - if current_user&.subscription_approved?(course.id)
-      = link_to "Перейти к курсу"
-    - elsif current_user
-      - if current_user.subscription_canceled?(course.id)
+    - if current_user
+      - if current_user.subscription_approved?(course.id)
+        = link_to "Перейти к курсу"
+      - elsif current_user.subscription_canceled?(course.id)
         span Менеджер отклонил Вашу предыдущую заявку,
-        |  
+        |
         = link_to "повторите попытку", cabinet_client_subscriptions_path(course_id: course), method: :post
-      - if current_user.subscription_new?(course.id)
+      - elsif current_user.subscription_new?(course.id)
         span Ваша заявка находится в обработке, пожалуйста, подождите
+      - else
+        = link_to "Подписаться", cabinet_client_subscriptions_path(course_id: course), method: :post
   hr
