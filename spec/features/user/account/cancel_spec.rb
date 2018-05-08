@@ -10,10 +10,10 @@ feature "Cancel Account" do
   scenario "User cancels account" do
     click_link "Cancel my account"
 
-    expect(page).to have_content("Sign in")
+    expect(page).to have_content("Войти")
     expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")
 
-    click_link "Sign in"
+    click_link "Войти"
     fill_form(:user, current_user.attributes.slice(:email, :password))
     click_button "Sign in"
 
