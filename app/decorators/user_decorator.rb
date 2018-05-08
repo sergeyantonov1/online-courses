@@ -14,14 +14,14 @@ class UserDecorator < ApplicationDecorator
   end
 
   def subscription_approved?(id)
-    object.subscriptions.find_by(course_id: id).status == "approved"
+    object.subscriptions.find_by(course_id: id)&.status == "approved"
   end
 
   def subscription_canceled?(id)
-    object.subscriptions.find_by(course_id: id).status == "canceled"
+    object.subscriptions.find_by(course_id: id)&.status == "canceled"
   end
 
   def subscription_new?(id)
-    object.subscriptions.find_by(course_id: id).status == "new"
+    object.subscriptions.find_by(course_id: id)&.status == "new"
   end
 end
