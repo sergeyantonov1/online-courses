@@ -6,7 +6,7 @@ class UserDecorator < ApplicationDecorator
   end
 
   def full_name
-    "#{object.first_name} (#{object.second_name})"
+    "#{object.first_name} #{object.second_name}"
   end
 
   def undecorate
@@ -23,5 +23,9 @@ class UserDecorator < ApplicationDecorator
 
   def subscription_new?(id)
     object.subscriptions.find_by(course_id: id).status == "new"
+  end
+
+  def full_name_with_middle_name
+    "#{object.first_name} #{object.second_name} #{object.middle_name}"
   end
 end
