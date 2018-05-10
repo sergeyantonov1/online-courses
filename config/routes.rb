@@ -35,12 +35,23 @@ Rails.application.routes.draw do
   namespace :cabinet do
     namespace :admin do
       resources :managers, only: %i[index]
+      resources :subscriptions, only: %i[index] do
+        member do
+          patch :approve
+          patch :cancel
+        end
+      end
 
       root to: "managers#index"
     end
 
     namespace :client do
       resources :subscriptions, only: %i[index create]
+
+      get "dashboard", to: "pages#dashboard"
+      get "profile", to: "pages#profile"
+
+      root to: "pages#dashboard"
     end
   end
 

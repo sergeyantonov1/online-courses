@@ -23,13 +23,13 @@ feature "Sign In" do
     scenario "with valid credentials" do
       sign_in_as_manager(manager.email, manager.password)
 
-      expect(page).to have_content("Sign out")
+      expect(page).to have_content("Выйти")
     end
 
     scenario "with invalid credentials" do
       sign_in_as_manager(manager.email, "wrong password")
 
-      expect(page).to have_content("Sign in")
+      expect(page).to have_content("Войти")
       expect(page).to have_content("Invalid Email or password")
     end
   end
@@ -38,7 +38,7 @@ feature "Sign In" do
     scenario "Visitor signs in with valid credentials" do
       sign_in_as_user(user.email, user.password)
 
-      expect(page).to have_content("Sign out")
+      expect(page).to have_content("Выйти")
     end
 
     scenario "Visitor signs in with invalid credentials" do
