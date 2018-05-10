@@ -1,4 +1,10 @@
 class Manager < ApplicationRecord
+  acts_as_messageable
+
+  def mailboxer_email(*)
+    email
+  end
+
   devise :invitable, :database_authenticatable, :recoverable,
     :rememberable, :trackable, :registerable, :validatable
 
