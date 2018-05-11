@@ -1,6 +1,6 @@
 module Teachers
   class LessonsController < ApplicationController
-    before_action :set_lesson, only: %[edit update destroy]
+    before_action :set_lesson, only: %(edit update destroy)
 
     def new
       @lesson = Lesson.new
