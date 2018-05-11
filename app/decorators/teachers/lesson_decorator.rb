@@ -1,4 +1,5 @@
-class Teachers::LessonDecorator < ApplicationDecorator
+module Teachers
+  class LessonDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -10,4 +11,5 @@ class Teachers::LessonDecorator < ApplicationDecorator
   #     end
   #   end
 
+  end
 end
