@@ -11,8 +11,8 @@ module Teachers
         lesson.course_id = params[:course_id]
         lesson.teacher_id = Course.find(params[:course_id]).teacher.id
       end
-        if @lesson.save
-          redirect_to teachers_course_path(@lesson.course) 
+      if @lesson.save
+        redirect_to teachers_course_path(@lesson.course)
       else
         render :new
       end
@@ -33,7 +33,7 @@ module Teachers
     def update
       @lesson = Lesson.find(params[:id])
       @lesson.update(lesson_params)
-      redirect_to teachers_course_path(@lesson.course) 
+      redirect_to teachers_course_path(@lesson.course)
     end
 
     def destroy
