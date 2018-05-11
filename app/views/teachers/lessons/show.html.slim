@@ -1,0 +1,7 @@
+h1 Lesson
+p = @lesson.name
+p = @lesson.description
+
+= link_to "edit",  edit_teachers_course_lesson_path(@lesson)
+br
+= link_to "delete", teachers_course_lesson_path(@lesson), method: :delete

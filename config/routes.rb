@@ -1,24 +1,4 @@
 Rails.application.routes.draw do
-  namespace :teachers do
-    get 'lessons_controller/new'
-  end
-
-  namespace :teachers do
-    get 'lessons_controller/create'
-  end
-
-  namespace :teachers do
-    get 'lessons_controller/show'
-  end
-
-  namespace :teachers do
-    get 'lessons_controller/update'
-  end
-
-  namespace :teachers do
-    get 'lessons_controller/destroy'
-  end
-
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   devise_for :managers,
@@ -46,7 +26,9 @@ Rails.application.routes.draw do
   end
 
   namespace :teachers do
-    resources :courses
+    resources :courses do
+      resources :lessons
+    end
     resources :conversations do
       resources :messages
     end
