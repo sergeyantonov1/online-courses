@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  expose_decorated :courses, -> { fetch_courses }
+  expose :courses, -> { fetch_courses }
 
   def index
   end
