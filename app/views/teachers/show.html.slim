@@ -7,4 +7,6 @@
     - if user_signed_in?
       p = link_to "Написать сообщение", controller: "users/conversations", action: "new", profile_role: "teacher", profile_id: teacher.id
     - if teacher_signed_in?
+      - if current_teacher.photo.url.present?
+        img.center src=current_teacher.photo.url
       p = link_to "Написать сообщение", controller: "teachers/conversations", action: "new", profile_role: "teacher", profile_id: teacher.id
