@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   end
 
   resources :courses, only: %i[index]
+  resources :teachers, only: %i[show]
 
   namespace :users do
     resources :conversations do

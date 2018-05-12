@@ -1,0 +1,10 @@
+.row
+  .col-md-8.col-md-offset-2
+    h3 = teacher.decorate.full_name
+    p = teacher.birth_date
+    - if manager_signed_in?
+      p = link_to "Написать сообщение", new_managers_conversation_path
+    - if user_signed_in?
+      p = link_to "Написать сообщение", controller: "users/conversations", action: "new", profile_role: "teacher", profile_id: teacher.id
+    - if teacher_signed_in?
+      p = link_to "Написать сообщение", new_teachers_conversation_path
