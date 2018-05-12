@@ -1,0 +1,15 @@
+.row
+  .col-md-8.col-md-offset-2
+    h3 = teacher.decorate.full_name
+    p = teacher.birth_date
+    - if manager_signed_in?
+      p = link_to "Написать сообщение", controller: "managers/conversations",
+       action: "new", profile_role: "teacher", profile_id: teacher.id
+    - if user_signed_in?
+      p = link_to "Написать сообщение", controller: "users/conversations",
+       action: "new", profile_role: "teacher", profile_id: teacher.id
+    - if teacher_signed_in?
+      - if current_teacher.photo.url.present?
+        img.center src=current_teacher.photo.url
+      p = link_to "Написать сообщение", controller: "teachers/conversations",
+       action: "new", profile_role: "teacher", profile_id: teacher.id

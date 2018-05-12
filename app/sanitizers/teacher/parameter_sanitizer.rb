@@ -6,6 +6,7 @@ class Teacher
       email
       password
       password_confirmation
+      photo
     ].freeze
 
     def initialize(*)

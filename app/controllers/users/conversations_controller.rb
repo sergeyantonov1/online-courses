@@ -9,16 +9,26 @@ module Users
     expose :user, -> { current_user }
 
     def create
-      recipient = case params[:profile_role]
-                  when "user"
-                    user_recipient
-                  when "teacher"
-                    teacher_recipient
-                  when "manager"
-                    manager_recipient
-      end
-      receipt = current_user.send_message(recipient, params[:body], params[:subject])
+      find_recipient if @recipient.nil?
+      receipt = current_user.send_message(@recipient, params[:body], params[:subject])
       redirect_to users_conversation_path(receipt.conversation)
+    end
+
+    def new
+      find_recipient if params[:profile_role]
+    end
+
+    private
+
+    def find_recipient
+      @recipient = case params[:profile_role]
+                   when "user"
+                     user_recipient
+                   when "teacher"
+                     teacher_recipient
+                   when "manager"
+                     manager_recipient
+      end
     end
   end
 end

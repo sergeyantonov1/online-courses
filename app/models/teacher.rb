@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
   acts_as_messageable
+  mount_uploader :photo, AvatarUploader
 
   def mailboxer_email(*)
     email
