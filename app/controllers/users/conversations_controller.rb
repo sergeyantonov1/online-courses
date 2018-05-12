@@ -22,12 +22,12 @@ module Users
 
     def find_recipient
       @recipient = case params[:profile_role]
-             when "user"
-               user_recipient
-             when "teacher"
-               teacher_recipient
-             when "manager"
-               manager_recipient
+                   when "user"
+                     user_recipient
+                   when "teacher"
+                     teacher_recipient
+                   when "manager"
+                     manager_recipient
       end
     end
   end
