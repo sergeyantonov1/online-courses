@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   end
 
   namespace :teachers do
-    resources :courses
+    resources :courses do
+      resources :lessons
+    end
     resources :conversations do
       resources :messages
     end

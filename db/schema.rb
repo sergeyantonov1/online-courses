@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20180511195613) do
     t.string "course_file"
   end
 
+  create_table "lessons", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "students_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "course_id", null: false
+    t.integer "teacher_id", null: false
+  end
+
   create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
     t.string "unsubscriber_type"
     t.integer "unsubscriber_id"
