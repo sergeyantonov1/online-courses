@@ -78,3 +78,9 @@ Lint/EndAlignment:
   SupportedStylesAlignWith:
     - keyword
     - variable
+
+Layout/LeadingCommentSpace:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false

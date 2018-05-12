@@ -4,7 +4,7 @@
   .course-description
     = course.description
   .course-teacher
-    = course.teacher_full_name
+    = link_to course.teacher.decorate.full_name, teacher_path(course.teacher)
   .course-subscribe
     - if current_user
       - if current_user.subscription_approved?(course.id)

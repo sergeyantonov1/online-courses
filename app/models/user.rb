@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  acts_as_messageable
+
+  def mailboxer_email(*)
+    email
+  end
+
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable
 

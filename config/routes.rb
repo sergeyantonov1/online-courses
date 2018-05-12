@@ -26,7 +26,12 @@ Rails.application.routes.draw do
   end
 
   namespace :teachers do
-    resources :courses
+    resources :courses do
+      resources :lessons
+    end
+    resources :conversations do
+      resources :messages
+    end
   end
 
   namespace :cabinet do
@@ -44,10 +49,28 @@ Rails.application.routes.draw do
 
     namespace :client do
       resources :subscriptions, only: %i[index create]
+
+      get "dashboard", to: "pages#dashboard"
+      get "profile", to: "pages#profile"
+
+      root to: "pages#dashboard"
     end
   end
 
   resources :courses, only: %i[index]
+  resources :teachers, only: %i[show]
+
+  namespace :users do
+    resources :conversations do
+      resources :messages
+    end
+  end
+
+  namespace :managers do
+    resources :conversations do
+      resources :messages
+    end
+  end
 
   root to: "courses#index"
 end

@@ -1,0 +1,11 @@
+= form_tag users_conversations_path, method: :post do
+  div
+    = select_tag :profile_role, options_for_select(["user", "manager", "teacher"])
+  div
+    = select_tag :profile_id, options_from_collection_for_select(recipients, :id, :first_name)
+  div
+    = text_field_tag :subject, nil, placeholder: "Subject"
+  div
+    = text_area_tag :body, nil, placeholder: "Body"
+
+  = submit_tag "Send"

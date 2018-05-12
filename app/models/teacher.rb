@@ -1,4 +1,11 @@
 class Teacher < ApplicationRecord
+  acts_as_messageable
+  mount_uploader :photo, AvatarUploader
+
+  def mailboxer_email(*)
+    email
+  end
+
   devise :invitable, :database_authenticatable, :recoverable,
     :rememberable, :trackable, :registerable, :validatable
 
