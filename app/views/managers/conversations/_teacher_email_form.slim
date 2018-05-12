@@ -1,0 +1,8 @@
+h3 = @recipient.decorate.full_name
+= form_tag managers_conversations_path, method: :post do
+  div
+    = text_field_tag :subject, nil, placeholder: "Subject"
+  div
+    = text_area_tag :body, nil, placeholder: "Body"
+
+  = submit_tag "Send"

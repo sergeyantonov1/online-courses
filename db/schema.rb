@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180509113434) do
+ActiveRecord::Schema.define(version: 20180511195613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "courses", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "description", null: false
-    t.integer "teacher_id", null: false
+    t.string "title"
+    t.text "description"
+    t.integer "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "course_file"
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(version: 20180509113434) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "photo"
+    t.date "birth_date"
     t.index ["email"], name: "index_teachers_on_email", unique: true
     t.index ["invitation_token"], name: "index_teachers_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_teachers_on_invitations_count"

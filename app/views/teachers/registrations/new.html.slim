@@ -19,6 +19,7 @@ h2 = title("Sign up")
         = f.input :email, required: true, input_html: { class: "form-group form-control" }
         = f.input :password, required: true, input_html: { class: "form-group form-control" }
         = f.input :password_confirmation, required: true, input_html: { class: "form-group form-control" }
+        = f.file_field :photo
 
       .form-actions
         = f.button :submit, "Sign up", class: "btn btn-default"
