@@ -5,3 +5,6 @@ p = @lesson.description
 = link_to "edit",  edit_teachers_course_lesson_path(@lesson)
 br
 = link_to "delete", teachers_course_lesson_path(@lesson), method: :delete
+br
+- if @lesson.lessons_file.present?
+    img.center src=@lesson.lessons_file.url

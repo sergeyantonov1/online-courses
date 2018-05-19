@@ -50,6 +50,7 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem 'youtube_it'
 
 group :staging, :production do
   gem "newrelic_rpm"
