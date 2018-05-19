@@ -1,0 +1,8 @@
+.well
+  = link_to task.name, teachers_course_lesson_task_path(course, lesson, task)
+  p = task.question
+  = link_to "edit",  edit_teachers_course_lesson_task_path(course, lesson, task)
+  br
+  = link_to "delete", teachers_course_lesson_task_path(course, lesson, task), method: :delete
+
+

@@ -5,3 +5,7 @@ p = @lesson.description
 = link_to "edit",  edit_teachers_course_lesson_path(@lesson)
 br
 = link_to "delete", teachers_course_lesson_path(@lesson), method: :delete
+br
+= link_to "Create task", new_teachers_course_lesson_task_path(@lesson.course, @lesson)
+br
+= link_to "See tasks", teachers_course_lesson_tasks_path(@lesson.course, @lesson)
