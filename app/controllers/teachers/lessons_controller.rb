@@ -7,7 +7,6 @@ module Teachers
     end
 
     def create
-      binding.pry
       @lesson = Lesson.new(lesson_params) do |lesson|
         lesson.course_id = params[:course_id]
         lesson.teacher_id = Course.find(params[:course_id]).teacher.id
