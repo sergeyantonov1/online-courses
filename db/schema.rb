@@ -131,6 +131,14 @@ ActiveRecord::Schema.define(version: 20180516173728) do
     t.string "status", default: "new", null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.string "question"
+    t.integer "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "second_name", default: "", null: false
