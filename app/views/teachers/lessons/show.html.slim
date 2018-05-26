@@ -6,8 +6,8 @@ p = @lesson.description
 br
 = link_to "delete", teachers_course_lesson_path(@lesson), method: :delete
 br
-  if @lesson.lessons_file.present?
-    img.center src=@lesson.lessons_file.url
+ - if @lesson.lessons_file.present?
+     img.center src = @lesson.lessons_file.url
 br
 = link_to "Create task", new_teachers_course_lesson_task_path(@lesson.course, @lesson)
 br
