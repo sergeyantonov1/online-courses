@@ -50,7 +50,7 @@ module Teachers
     end
 
     def lesson_params
-      params.require(:lesson).permit(:name, :description)
+      params.require(:lesson).permit(:name, :description, :lessons_file)
     end
   end
 end

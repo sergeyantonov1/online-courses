@@ -1,26 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
 
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	
+	<title>LearnLab</title>
+
+</head>
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+
+	<div id="signin_modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<div class="modal-main">
+					<p class="modal-title">Вход</p>
+					<div class="modal-body">
+						<input type="email" id="email_enter" placeholder="E-mail" class="form-control mrgnbtm" required autofocus>
+						<input type="password" id="password" placeholder="Пароль" class="form-control mrgnbtm" required>
+					</div>
+					<div class="enterbtn">
+						<button type="button" class="btn btn_enter">Войти</button>
+						<p class="forgotpass"><a href="">Забыли пароль?</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<header>
+		<div class="container">
+			<div class="logo"><p><a href="index.html">LearnLab</a></p></div>
+			<div class="nav_links">
+				<p>
+					<a id="log_but" href="#signin_modal" data-toggle="modal">Войти</a>
+					<span class="line">|</span>
+					<a id="reg_but" href="registerST.html" class="signup">Регистрация</a>
+				</p>
+			</div>
+		</div>
+	</header>
+
+	<div class="notfound">
+		<div class="container">
+			<div class="col-md-6"><img class="woman_notfound" src="images/woman.png" alt=""> </div>
+			<div class="col-md-6">
+				<p class="text404">404</p>
+				<p class="textlow404">О нет</p>
+				<p class="textlower404">Кажется, такой страницы еще не существует :(</p>
+				<p class="zrya">Зря ты туда нажал...</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+<footer id="myFooter">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5" style="padding-right: 50px">
+				<h3><a href="#">О нас</a></h3>
+				<p class="txtfoot">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam officia nostrum omnis expedita architecto, maxime quaerat labore eius qui distinctio tempore, iste consequuntur facere aut quidem inventore eum voluptatibus cum?</p>
+			</div>
+			<div class="col-sm-2">
+				<h5>Ссылки</h5>
+				<ul class="txtfoot">
+					<li><a href="#">Основная</a></li>
+					<li><a href="#">Войти</a></li>
+					<li><a href="#">Регистрация</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-2">
+				<h5>Помощь</h5>
+				<ul class="txtfoot">
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Связаться</a></li>
+					<li><a href="#">Преподавателям</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<div class="social-networks">
+					<h5>Мы в соц сетях</h5>
+					<a href="#" class="twitter"><i class="fab fa-twitter-square"></i></a>
+					<a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
+					<a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+				</div>
+				<button type="button" class="btn">Подписаться</button>
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
+
 </html>
