@@ -1,34 +1,19 @@
-.row
-  .columns
-    h2 = title("Sign up")
-
-.row
-  .col-md-5
-    = simple_form_for resource,
-        as: resource_name,
-        url: registration_path(resource_name) do |f|
-
-      legend
-        | Create your
-        '
-        strong Rails Base example site
-        '
-        | account
-
-      .form-group
-        = f.input :first_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-        = f.input :second_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-        = f.input :middle_name, autofocus: true, input_html: { class: "form-group form-control" }
-        = f.input :birthday, required: true, as: :date, start_year: Date.today.year - 90,
-                             end_year: Date.today.year - 6,
-                             order: [:month, :year, :day], input_html: { class: "form-group form-control" }
-        = f.input :phone_number, as: :tel, required: true, input_html: { class: "form-group form-control" }
-        = f.input :email, required: true, input_html: { class: "form-group form-control" }
-        = f.input :password, required: true, input_html: { class: "form-group form-control" }
-        = f.input :password_confirmation, required: true, input_html: { class: "form-group form-control" }
-
-      .form-actions
-        = f.button :submit, "Sign up", class: "btn btn-default"
-
-  .col-md-5.col-md-offset-2
-    = render "users/shared/links"
+.register
+  .container
+  = simple_form_for resource, as: resource_name,
+    url: registration_path(resource_name), html: { class: "form-horizontal" } do |f|
+    p.title_course
+      | Зарегистрироваться
+    .formgroup
+      = f.input :first_name, required: true, label: false, autofocus: true, input_html: { placeholder: "Имя", class: "form-control mrgnbtm" }
+      = f.input :second_name, required: true, autofocus: true, label: false, input_html: { placeholder: "Фамилия", class: "form-control mrgnbtm" }
+      = f.input :middle_name, autofocus: true, label: false, input_html: { placeholder: "Отчество", class: "form-control mrgnbtm" }
+      = f.input :birthday, required: true, as: :date, start_year: Date.today.year - 90,
+                           end_year: Date.today.year - 6,
+                           order: [:month, :year, :day], input_html: { class: "form-control mrgnbtm" }
+      = f.input :phone_number, as: :tel, required: true, label: false, input_html: { placeholder: "Номер телефона", class: "form-control mrgnbtm" }
+      = f.input :email, required: true, autofocus: true, label: false, input_html: { id: "email", placeholder: "Email", class: "form-control mrgnbtm" }
+      = f.input :password, required: true, autofocus: true, label: false, input_html: { id: "password", placeholder: "Пароль", class: "form-control mrgnbtm" }
+      = f.input :remember_me, as: :boolean, label: "Запомнить меня?"
+      .btns
+        = f.button :submit, "Зарегистрироваться", class: "btn regbtn"

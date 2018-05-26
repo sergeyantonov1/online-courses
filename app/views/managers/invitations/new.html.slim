@@ -1,8 +1,12 @@
-h2 = t "devise.invitations.new.header"
-= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post} do |f|
-
-  = f.input :email, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-  = f.input :first_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-  = f.input :second_name, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-
-  = f.button :submit, t("devise.invitations.new.submit_button"), class: "btn btn-default"
+.register
+  .container
+  = simple_form_for resource, as: resource_name,
+    url: invitation_path(resource_name), html: { method: :post, class: "form-horizontal" } do |f|
+    p.title_course
+      | Приглашение менеджера
+    .formgroup
+      = f.input :email, required: true, autofocus: true, label: false, input_html: { id: "email", placeholder: "Email", class: "form-control mrgnbtm" }
+      = f.input :first_name, required: true, autofocus: true, label: false, input_html: { id: "email", placeholder: "Имя", class: "form-control mrgnbtm" }
+      = f.input :second_name, required: true, autofocus: true, label: false, input_html: { id: "email", placeholder: "Фамилия", class: "form-control mrgnbtm" }
+      .btns
+        = f.button :submit, "Пригласить", class: "btn regbtn"

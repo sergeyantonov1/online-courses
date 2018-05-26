@@ -1,0 +1,33 @@
+header
+  .container
+    .logo
+      p
+        = link_to "LearnLab", root_path
+    .nav_links
+      p
+        a#log_but[href="#signin_modal" data-toggle="modal"]
+          | Войти
+        span.line
+          | |
+        = link_to "Регистрация", new_user_registration_path, id:"reg_but", class: "signup"
+
+  #signin_modal.modal.fade
+    .modal-dialog
+      .modal-content
+        button.close[type="button" data-dismiss="modal" aria-hidden="true"]
+          | ×
+        .modal-main
+          p.modal-title
+            | Вход
+          .modal-body
+            = simple_form_for User.new,  url: session_path(:user) do |f|
+              = f.input :email, required: true, autofocus: true, label: false,
+                input_html: { id: "email_enter", class: "form-control form-group", placeholder: "Email" }
+              = f.input :password, required: true, label: false,
+                input_html: { id: "password", class: "form-control form-group", placeholder: "Пароль" }
+              = f.input :remember_me, as: :boolean, label: "Запомнить меня?", input_html: { class: "form-group" }
+              .enterbtn
+                = f.button :submit, "Войти", class: "btn btn_enter"
+                p.forgotpass
+                  a[href=""]
+                    | Забыли пароль?

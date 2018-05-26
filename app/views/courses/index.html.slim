@@ -1,50 +1,18 @@
-doctype html
-html
-  head
-    meta[http-equiv="Content-type" content="text/html; charset=utf-8"]
-    meta[http-equiv="X-UA-Compatible" content="IE=Edge"]
-    meta[name="viewport" content="width=device-width, initial-scale=1"]
-    = javascript_include_tag("jquery-3.3.1.min.js")
-    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"]
-    link[rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"]
-    script[src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"]
-    script[defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"]
-    title
-      | LearnLab
-  body
-    #signin_modal.modal.fade
-      .modal-dialog
-        .modal-content
-          button.close[type="button" data-dismiss="modal" aria-hidden="true"]
-            | ×
-          .modal-main
-            p.modal-title
-              | Вход
-            .modal-body
-              input#email_enter.form-control.mrgnbtm[type="email" placeholder="E-mail" required autofocus]
-              input#password.form-control.mrgnbtm[type="password" placeholder="Пароль" required]
-            .enterbtn
-              button.btn.btn_enter[type="button"]
-                | Войти
-              p.forgotpass
-                a[href=""]
-                  | Забыли пароль?
-    section.allcourses
-      .container
-        p.title_course
-          | Все курсы
-      - courses.each do |course|
-        .course
-          .contain_course
-            .row
-              .col-md-4
-                img src = course.course_file.url
-              .col-md-8
-                p.title_infocourse
-                  = course.title
-                p.text_infocourse
-                  = course.description
-                button.btn.enter_course[type="button"]
-                  p.text_enter
-                    = link_to "Подписаться", cabinet_client_subscriptions_path(course_id: course), method: :post
-
+section.allcourses
+  .container
+    p.title_course
+      | Все курсы
+  - courses.each do |course|
+    .course
+      .contain_course
+        .row
+          .col-md-4
+            img src = course.course_file.url
+          .col-md-8
+            p.title_infocourse
+              = course.title
+            p.text_infocourse
+              = course.description
+            button.btn.enter_course[type="button"]
+              p.text_enter
+                = link_to "Подписаться", cabinet_client_subscriptions_path(course_id: course), method: :post

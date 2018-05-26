@@ -1,0 +1,45 @@
+footer#myFooter
+  .container
+    .row
+      .col-sm-5 style="padding-right: 50px"
+        h3
+          a[href="#"]
+            | О нас
+        p.txtfoot
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam officia nostrum omnis expedita architecto, maxime quaerat labore eius qui distinctio tempore, iste consequuntur facere aut quidem inventore eum voluptatibus cum?
+      .col-sm-2
+        h5
+          | Ссылки
+        ul.txtfoot
+          li
+            a[href="#"]
+              | Основная
+          li
+            = link_to "Войти", new_user_session_path
+          li
+            = link_to "Регистрация", new_user_registration_path
+      .col-sm-2
+        h5
+          | Помощь
+        ul.txtfoot
+          li
+            a[href="#"]
+              | FAQ
+          li
+            a[href="#"]
+              | Связаться
+          li
+            a[href="#"]
+              | Преподавателям
+      .col-sm-3
+        .social-networks
+          h5
+            | Мы в соц сетях
+          a.twitter[href="#"]
+            i.fab.fa-twitter-square
+          a.facebook[href="#"]
+            i.fab.fa-facebook-square
+          a.google[href="#"]
+            i.fab.fa-google-plus-g
+        button.btn[type="button"]
+          | Подписаться

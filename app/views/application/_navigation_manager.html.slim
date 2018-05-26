@@ -1,13 +1,14 @@
-ul.nav.navbar-nav.navbar-right
-  - if manager_signed_in?
-    li.dropdown
-      a.dropdown-toggle data-toggle="dropdown" href="#"
-        = current_manager.email
-        b.caret
-      ul.dropdown-menu
-        li = link_to "Кабинет", cabinet_admin_root_path
-        li = link_to "Редактировать профиль", edit_manager_registration_path
-        li = link_to "Заявки на подписку", cabinet_admin_subscriptions_path
-        li = link_to "Почта", managers_conversations_path
-        li.divider
-        li = link_to "Выйти", destroy_manager_session_path
+header
+  .container
+    .logo
+      p
+        = link_to "LearnLab", root_path
+    .nav_links
+      p
+        = link_to "Кабинет", cabinet_admin_root_path
+        span.line
+          | |
+        = link_to "Подписки", cabinet_admin_subscriptions_path
+        span.line
+          | |
+        = link_to "Выход", destroy_manager_session_path
