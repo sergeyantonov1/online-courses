@@ -1,8 +1,18 @@
-h2 = t 'devise.invitations.edit.header'
-= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f|
-
-  = f.hidden_field :invitation_token
-  = f.input :password, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-  = f.input :password_confirmation, required: true, autofocus: true, input_html: { class: "form-group form-control" }
-
-  = f.button :submit, t("devise.invitations.edit.submit_button"), class: "btn btn-default"
+.register
+  .container
+  = simple_form_for resource, as: resource_name,
+    url: invitation_path(resource_name), html: { method: :put, class: "form-horizontal" } do |f|
+    p.title_course
+      | Регистрация
+    .formgroup
+      = f.hidden_field :invitation_token
+      = f.input :password, required: true, autofocus: true, label: false, input_html: { id: "password", placeholder: "Пароль", class: "form-control mrgnbtm" }
+      = f.input :password_confirmation, required: true, label: false, autofocus: true, input_html: { placeholder: "Подтвердите пароль", id: "passwordreq", class: "form-control" }
+      .checkbox
+        label
+          input[type="checkbox"]
+          | Я согласен с
+          a[href="#"]
+            | правилами
+      .btns
+        = f.button :submit, "Зарегистрироваться", class: "btn regbtn"

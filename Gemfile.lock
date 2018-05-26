@@ -148,6 +148,8 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.17)
     flamegraph (0.9.5)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     formulaic (0.4.0)
       activesupport
@@ -459,6 +461,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   flamegraph
+  font-awesome-rails
   formulaic
   google-analytics-rails
   guard-rspec
